@@ -1,13 +1,18 @@
 body #page {
+  width: 960px;
+  margin: 0 auto;
   outline: 1px dashed red;
 }
 body #page .site-header {
+  padding: 2em 0;
   outline: 1px dashed red;
 }
 body #page .site-content {
+  padding: 2em 0;
   outline: 1px dashed red;
 }
 body #page .site-footer {
+  padding: 2em 0;
   outline: 1px dashed red;
 }
 body .site-title {

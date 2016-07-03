@@ -41,8 +41,30 @@ get_header();
 
              tha_content_while_before();
 
+			 // PAGING
+             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+			 // ORDER
+			 $default_order = 'DESC';
+			 $order_query_param = (get_query_var('order')) ? get_query_var('order') : $default_order;
+			 $order_query_param = $order_query_param == 'DESC' || $order_query_param == 'ASC' ? $order_query_param : $default_order;
+
+             $args = array('post_type' => 'post',
+                           'post_status' => 'publish',
+                           'paged' => $paged,
+	                       'posts_per_page' => 2,
+                           'orderby' => 'post_date',
+                           'order' => $order_query_param);
+
+            $my_query = new WP_Query($args);
+
+
+
+
 			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+		//	while ( have_posts() ) : the_post();
+
+            if($my_query->have_posts()) : while ($my_query->have_posts() ) : $my_query->the_post();
 
 				/*
 				 * Include the Post-Format-specific template for the content.
@@ -53,6 +75,7 @@ get_header();
 
 
 			endwhile;
+            endif;
 
             tha_content_while_after();
 
