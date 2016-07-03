@@ -1,0 +1,16 @@
+body #page {
+  outline: 1px dashed red;
+}
+body #page .site-header {
+  outline: 1px dashed red;
+}
+body #page .site-content {
+  outline: 1px dashed red;
+}
+body #page .site-footer {
+  outline: 1px dashed red;
+}
+body .site-title {
+  color: #3563ff !important;
+  background: #ff0000 !important;
+}

@@ -1,0 +1,32 @@
+@color: #3563ff;
+@bGColor: #f00;
+
+.redOutline() {
+  outline: 1px dashed red;
+}
+
+body {
+
+  #page {
+    .redOutline();
+
+    .site-header {
+      .redOutline();
+    }
+
+    .site-content {
+      .redOutline();
+    }
+
+    .site-footer {
+      .redOutline();
+    }
+
+  }
+
+  .site-title {
+    color: @color !important;
+    background: @bGColor !important;
+  }
+
+}
